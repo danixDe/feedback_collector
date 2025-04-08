@@ -2,26 +2,28 @@ import React, { useState, useEffect } from 'react';
 import Feedform from './Feedform';
 import FeedbackList from './list';
 import { MessageSquareText, List } from 'lucide-react';
+import { getFeedbacks } from './getFeedback';
+import { postFeedbacks } from './postFeedback';
 
 function App() {
   const [showAdmin, setShowAdmin] = useState(false);
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('feedbacks');
-    if (saved) setFeedbacks(JSON.parse(saved));
+    const load = async()=>{
+      const data = await getFeedbacks();
+      setFeedbacks(data);
+    };
+    load();
   }, []);
 
-  const handleSubmit = (data) => {
-    const newItem = {
-      id: Date.now(),
-      ...data,
-      created_at: new Date().toLocaleString()
+  const handleSubmit = async (formData) => {
+    const newData = {
+      ...formData,
+      created_at: new Date().toISOString()
     };
-
-    const updated = [newItem, ...feedbacks];
-    setFeedbacks(updated);
-    localStorage.setItem('feedbacks', JSON.stringify(updated));
+    await postFeedbacks(newData);
+    setFeedbacks([newData, ...feedbacks]);
   };
 
   return (
