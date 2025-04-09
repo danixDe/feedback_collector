@@ -1,5 +1,7 @@
 import { supabase } from './supabaseClient';
 
-export const postFeedbacks = async (data) => {
-  await supabase.from('feedbacks').insert([data]);
+ const postFeedback = async (data) => {
+  const { error } = await supabase.from('feedbacks').insert([data]);
+  if (error) throw error;
 };
+export default postFeedback

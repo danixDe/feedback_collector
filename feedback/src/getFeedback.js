@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient';
 
-export const getFeedbacks = async () => {
+ const getFeedbacks = async () => {
   const res = await supabase
     .from('feedbacks')
     .select('*')
@@ -8,3 +8,4 @@ export const getFeedbacks = async () => {
 
   return res.data || [];
 };
+export default getFeedbacks

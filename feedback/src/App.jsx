@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Feedform from './Feedform';
 import FeedbackList from './list';
 import { MessageSquareText, List } from 'lucide-react';
-import { getFeedbacks } from './getFeedback';
-import { postFeedbacks } from './postFeedback';
+import  getFeedbacks  from './getFeedback';
+import  postFeedbacks  from './postFeedback';
 
 function App() {
   const [showAdmin, setShowAdmin] = useState(false);
