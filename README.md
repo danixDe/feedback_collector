@@ -1,12 +1,81 @@
-# React + Vite
+# Feedback Collector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page feedback collection microapplication built using React, Tailwind CSS, and Supabase, deployed on Netlify. This app allows users to submit feedback and provides an admin view to see all submissions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React frontend with Vite
+- Tailwind CSS for styling
+- Feedback form with:
+  - Full Name input
+  - Email input (with basic validation)
+  - Feedback message textarea
+  - Submit button with loading state
+- Admin View toggle:
+  - Displays feedback submissions in a styled list
+- Responsive UI
+- Timestamp for each feedback
+- Watermark in footer with developer name
+- Supabase as backend for feedback storage
+- Deployed on Netlify
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- Tailwind CSS
+- Supabase (Backend as a service)
+- Netlify (Frontend deployment)
+
+## Folder Structure
+
+feedback_collector/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── Feedform.jsx
+│   ├── list.jsx
+│   ├── getFeedback.js
+│   ├── postFeedback.js
+│   └── supabaseClient.js
+├── index.html
+├── package.json
+├── vite.config.js
+└── tailwind.config.js
+
+## API Endpoints
+
+- POST /submit-feedback  
+  Inserts a new feedback entry into the Supabase `feedbacks` table.
+
+- GET /feedbacks  
+  Retrieves all feedback entries in descending order of creation time.
+
+## Setup Instructions
+
+1. Clone the repository:
+   git clone https://github.com/yourusername/feedback_collector.git
+   cd feedback_collector
+
+2. Install dependencies:
+   npm install
+
+3. Create a `.env` file and add your Supabase credentials:
+   VITE_SUPABASE_URL=your-supabase-url
+   VITE_SUPABASE_ANON_KEY=your-anon-key
+
+4. Run the development server:
+   npm run dev
+
+5. To build for production:
+   npm run build
+
+## Deployment Instructions (Netlify)
+
+- Build Command: npm run build
+- Publish Directory: dist
+- Environment Variables: Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
+
+## Developer
+
+Aravind Bollapragada  
+© 2025
