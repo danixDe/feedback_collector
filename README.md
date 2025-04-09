@@ -1,7 +1,9 @@
 # Feedback Collector
 
 A single-page feedback collection microapplication built using React, Tailwind CSS, and Supabase, deployed on Netlify. This app allows users to submit feedback and provides an admin view to see all submissions.
-
+## Links
+  Github_repo: https://github.com/danixDe/Feedback_collector
+  Netlify_live: https://feedback-coll.netlify.app/
 ## Features
 
 - React frontend with Vite
