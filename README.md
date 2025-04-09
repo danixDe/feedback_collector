@@ -64,7 +64,9 @@ feedback_collector/
 3. Create a `.env` file and add your Supabase credentials:
 VITE_SUPABASE_URL=https://ejfyubtusklgwojluvrp.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqZnl1YnR1c2tsZ3dvamx1dnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxMjA5NzEsImV4cCI6MjA1OTY5Njk3MX0.LF4-q3xm40Ib9XMSHxdsady8R6bBlYmKii_Hgd3DCfM
-        
+   
+4. To Install the node dependenciesF:
+    npm i
 
 5. Run the development server:
    npm run dev
